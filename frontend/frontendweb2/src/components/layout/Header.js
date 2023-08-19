@@ -2,7 +2,7 @@ import React, { Fragment, useContext, useState } from "react";
 import {Link, useNavigate} from 'react-router-dom';
 import AuthContext from "../../contexts/auth-context";
 import classes from './Header.module.css';
-import Button from '../UI/Button';
+import Button from '../UI/Button/Button';
 import HeaderCartButton from "../../components/layout/HeaderCartButton"
 
 const Header = props => {
@@ -11,7 +11,7 @@ const Header = props => {
 
     const LogoutHandler = () => {
         navigate('/');
-        ctx.onLogout;
+        ctx.onLogout();
     };
 
     const [dropdownVisible, setDropdownVisible] = useState(false);

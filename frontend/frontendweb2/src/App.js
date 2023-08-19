@@ -7,12 +7,14 @@ import { OrderContextProvider } from './contexts/order-context';
 import CartProvider from './contexts/CartProvider';
 import Cart from './components/cart/Cart';
 import Header from './components/layout/Header';
+import LoginForm from './components/auth/LoginForm';
+import RegisterForm from './components/auth/RegisterForm';
 
 function App() {
 
   const [cartIsShown, setCartIsShown] = useState(false);
   const [LoginIsShown, setLoginIsShown] = useState(false);
-  const [RegisterIsShow, setRegisterIsShown] = useState(false);
+  const [RegisterIsShown, setRegisterIsShown] = useState(false);
 
   const showCartHandler = () => {
     setCartIsShown(true);
@@ -45,13 +47,17 @@ function App() {
           <CartProvider>
             <Router>
               {cartIsShown && <Cart onClose={hideCartHandler}/>}
+              {LoginIsShown && <LoginForm onClose={hideLoginFormHandler}/>}
+              {RegisterIsShown && <RegisterForm onClose={hideRegisterFormHandler}/>}
               <Header 
                 onShowCart={showCartHandler}
                 onShowLoginForm={showLoginFormHandler}
                 onShowRegisterForm={showRegisterFormHandler} 
               />
               <main>
-
+                <Routes>
+                  
+                </Routes>
               </main>
             </Router>
           </CartProvider>
