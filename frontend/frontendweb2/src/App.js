@@ -9,6 +9,8 @@ import Cart from './components/cart/Cart';
 import Header from './components/layout/Header';
 import LoginForm from './components/auth/LoginForm';
 import RegisterForm from './components/auth/RegisterForm';
+import Dashboard from './components/home/Dashboard';
+import ProfileInfos from './components/common/Seller/ProfileInfos';
 
 function App() {
 
@@ -56,7 +58,8 @@ function App() {
               />
               <main>
                 <Routes>
-                  
+                  <Route path='/' exact element={<Dashboard/>}/>
+                  <Route path='/profile' element={<ProfileInfos/>}/>
                 </Routes>
               </main>
             </Router>
