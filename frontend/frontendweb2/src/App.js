@@ -11,6 +11,12 @@ import LoginForm from './components/auth/LoginForm';
 import RegisterForm from './components/auth/RegisterForm';
 import Dashboard from './components/home/Dashboard';
 import ProfileInfos from './components/common/Seller/ProfileInfos';
+import MyOrders from './components/common/Buyer/MyOrders';
+import OrderHistory from './components/common/Seller/OrderHistory';
+import NewItem from './components/common/Seller/NewItem';
+import NewOrders from './components/common/Seller/NewOrders';
+import Verification from './components/common/Admin/Verification';
+import AllOrders from './components/common/Admin/AllOrders';
 
 function App() {
 
@@ -60,6 +66,12 @@ function App() {
                 <Routes>
                   <Route path='/' exact element={<Dashboard/>}/>
                   <Route path='/profile' element={<ProfileInfos/>}/>
+                  <Route path='/myOrders' element={<MyOrders/>}/>
+                  <Route path='/orderHistory' element={<OrderHistory/>}/>
+                  <Route path='/addNew' element={<NewItem/>}/>
+                  <Route path='newOrders' element={<NewOrders/>}/>
+                  <Route path='/verification' element={<Verification/>}/>
+                  <Route path='/allOrders' element={<AllOrders/>}/>
                 </Routes>
               </main>
             </Router>

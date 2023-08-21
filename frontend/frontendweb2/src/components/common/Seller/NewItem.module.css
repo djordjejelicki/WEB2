@@ -1,0 +1,57 @@
+.newItem {
+    text-align: left;
+    max-width: 45rem;
+    width: 60%;
+    margin: auto;
+    position: relative;
+    background-color: #383838;
+    color: white;
+    border-radius: 14px;
+    padding: 1rem;
+    box-shadow: 0 1px 18px 10px rgba(0, 0, 0, 0.25);
+  }
+  
+  .newItem h2 {
+    text-align: center;
+    font-size: 2rem;
+    margin-top: 0;
+  }
+
+  .control {
+    margin: 1rem 2rem;
+    display: flex;
+    align-items: stretch;
+    flex-direction: column;
+  }
+  
+  .control label,
+  .control input {
+    display: block;
+  }
+  
+  .control label {
+    font-weight: bold;
+    flex: 1;
+    color: white;
+    margin-bottom: 0.5rem;
+  }
+  
+  .control input {
+    flex: 3;
+    font: inherit;
+    padding: 0.35rem 0.35rem;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+  }
+  
+  .control input:focus {
+    outline: none;
+    border-color: rgba(79, 79, 255, 0.863);
+    background: #f6dbfc;
+  }
+  
+  .control.invalid input {
+    border-color: red;
+    background: #fbdada;
+  }
+  
