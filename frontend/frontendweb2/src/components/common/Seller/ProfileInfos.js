@@ -5,6 +5,7 @@ import AuthContext from "../../../contexts/auth-context";
 import { toBeRequired } from "@testing-library/jest-dom/matchers";
 import axios from "axios";
 import Button from "../../UI/Button/Button";
+import { useNavigate } from "react-router-dom";
 
 const getImageType = (image) => {
     if (image.startsWith("/9j/")) {

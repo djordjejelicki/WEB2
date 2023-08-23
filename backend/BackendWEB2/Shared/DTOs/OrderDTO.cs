@@ -10,6 +10,6 @@ namespace Shared.DTOs
     {
         public long Id { get; set; }
         public string Username { get; set; }
-        public List<OrderItemDTO> Items { get; set; }
+        public List<OrderItemDTO> OrderItems { get; set; }
     }
 }

@@ -37,6 +37,11 @@ const RegisterForm = props => {
         setIsGoogleFormVisible(false);
     };
 
+    const googleToggleFormVisibility = () => {
+        setIsGoogleFormVisible((prevState) => !prevState);
+        setIsFormVisible(false);
+    };
+
     const emailChangeHandler = event => {
         setEneteredEmail(event.target.value);
         const regex = /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i;
@@ -46,14 +51,14 @@ const RegisterForm = props => {
 
     const passwordChangeHandler = event => {
         setEnteredPassword(event.target.value);
-        const regex = /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i;
+        const regex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d).{8,}$/;
         setPasswordIsValid(regex.test(event.target.value));
         setFormIsValid(emailIsValid && passwordIsValid && passwordRepeatIsValid);
     };
 
     const passwordRepeatChangeHandler = event => {
         setEnteredPasswordRepeat(event.target.value);
-        const regex = /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i;
+        const regex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d).{8,}$/;
         const isValid = regex.test(event.target.value) && event.target.value === enteredPassword;
         setPasswordRepeatIsValid(isValid);
         setFormIsValid(emailIsValid && passwordIsValid && passwordRepeatIsValid);
@@ -156,8 +161,8 @@ const RegisterForm = props => {
                     value={enteredPassword} onChange={passwordChangeHandler}/>
                     <Input ref={passwordRepeatInputRef} id='passwordRepeat' label='Repeat Password' type='password' 
                     isValid={passwordRepeatIsValid} value={enteredPasswordRepeat} onChange={passwordRepeatChangeHandler}/>
-                    <input type="radio" value="Buyer" name="accType" defaultChecked>Kupac</input>
-                    <input type="radio" value="Seller" name="accType">Prodavac</input>
+                    <input type="radio" value="Buyer" name="accType"  defaultChecked/>Kupac
+                    <input type="radio" value="Seller" name="accType"/>Prodavac
                     <Input type='file' label='Profile picture' id='avatar'/>
                     <div className={classes.actions}>
                         <Button type='submit' id='register' className={classes.btn}>Register</Button>
@@ -166,13 +171,13 @@ const RegisterForm = props => {
             )}
             <hr/>
             <center>
-                <button onClick={toggleFormVisibility}>{isGoogleFormVisible ? 'Hide Google register' : 'Google register'}</button>
+                <button onClick={googleToggleFormVisibility}>{isGoogleFormVisible ? 'Hide Google register' : 'Google register'}</button>
             </center>
             {isGoogleFormVisible && (
                 <center>
                     <div id="accType">
-                        <input type="radio" value="Buyer" name="accType" defaultChecked>Kupac</input>
-                        <input type="radio" value="Seller" name="accType" defaultChecked>Prodavac</input>
+                        <input type="radio" value="Buyer" name="accType" defaultChecked/>Kupac
+                        <input type="radio" value="Seller" name="accType" defaultChecked/>Prodavac
                     </div>
                     <GoogleLogin onSuccess={googleRegisterHandler}/>
                 </center>

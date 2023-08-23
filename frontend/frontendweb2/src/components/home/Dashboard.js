@@ -1,5 +1,5 @@
 import React, { Fragment, useContext, useEffect } from "react";
-import Card from '../UI/Card/'
+import Card from '../UI/Card/Card';
 import classes from './Dashboard.module.css';
 import ItemContext from "../../contexts/item-context";
 import DashBoardItem from "./DashBoardItem";

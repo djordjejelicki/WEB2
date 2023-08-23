@@ -7,6 +7,7 @@ import OrderContext from "../../../contexts/order-context";
 import { useNavigate } from "react-router-dom";
 import Card from "../../UI/Card/Card";
 import OrderCard from "../OrderCard";
+import axios from "axios";
 
 const NewOrders = () => {
     const authCtx = useContext(AuthContext);

@@ -12,6 +12,7 @@ export const ItemContextProvider = props => {
 
     const FetchHandler = items => {
         axios.get(process.env.REACT_APP_SERVER_URL+'items/allItems').then(response => {
+            console.log("nesto");
             if(response.data != null){
                 setItems(response.data.map(element => new Item(element)));
             }

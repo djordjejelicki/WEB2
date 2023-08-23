@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Shared.DTOs
 {
-    internal class PasswordResetDTO
+    public class PasswordResetDTO
     {
     }
 }
